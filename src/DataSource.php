@@ -1,7 +1,12 @@
 <?php
 
-class dataSource
+namespace App;
+
+class DataSource
 {
+    /**
+     * @var \PDO $databaseConnection;
+     */
     private $databaseConnection;
 
     public function loadFixtures()
@@ -19,7 +24,7 @@ class dataSource
 
     private function createDatabaseConnection()
     {
-        $this->databaseConnection = new Pdo('sqlite:memory');
-        $this->databaseConnection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $this->databaseConnection = new \PDO('sqlite:memory');
+        $this->databaseConnection->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
     }
 }

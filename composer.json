@@ -1,0 +1,17 @@
+{
+  "name": "dmnbars/quest",
+  "description": "",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "dmnbars",
+      "email": "dmnbars@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "App\\": "src"
+    }
+  }
+}
