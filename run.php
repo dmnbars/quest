@@ -2,7 +2,8 @@
 
 require_once 'vendor/autoload.php';
 
-$report = new \App\PaymentReport();
+$dataSource = new \App\DataSource();
+$report = new \App\PaymentReport($dataSource);
 $report->initData();
 $report->createReport();
 $report->printResult('csv');

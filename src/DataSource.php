@@ -27,4 +27,14 @@ class DataSource
         $this->databaseConnection = new \PDO('sqlite:memory');
         $this->databaseConnection->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
     }
+
+    public function selectData($sql, $values)
+    {
+        $db = $this->getDatabaseConnection();
+
+        $stmt = $db->prepare($sql);
+        $stmt->execute($values);
+
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    }
 }
